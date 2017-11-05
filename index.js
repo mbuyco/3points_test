@@ -1,7 +1,8 @@
-const express = require('express');
-const http    = require('http');
-const app     = express();
+const express    = require('express');
+const http       = require('http');
+const app        = express();
 const bodyParser = require('body-parser');
+const port       = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
@@ -61,4 +62,4 @@ app.get('/api/weather', (req, res) => {
 	}).end();
 });
 
-app.listen(3000, () => console.log('Listening on port 3000'));
+app.listen(port, () => console.log('Listening on port 3000'));
